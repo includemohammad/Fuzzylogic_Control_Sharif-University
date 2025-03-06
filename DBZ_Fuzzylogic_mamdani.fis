@@ -1,0 +1,49 @@
+[System]
+Name='DBZ_Fuzzylogic_mamdani'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Velocity'
+Range=[0 140]
+NumMFs=3
+MF1='LS':'trapmf',[-63 -7 23.3 40.7922535211268]
+MF2='MS':'trapmf',[32.643661971831 45.443661971831 78.243661971831 94.043661971831]
+MF3='HS':'trapmf',[87.6232394366197 111 147 203]
+
+[Input2]
+Name='Distance'
+Range=[0 50]
+NumMFs=3
+MF1='SD':'trapmf',[-22.5 -2.5 8.407 22.5]
+MF2='MD':'trapmf',[12 20.6 28.9 38.512323943662]
+MF3='HD':'trapmf',[27.5 44.0580985915493 52.5 72.5]
+
+[Output1]
+Name='Accserration'
+Range=[-1 1]
+NumMFs=5
+MF1='N':'trimf',[-1 -0.5 0]
+MF2='ZR':'trimf',[-0.5 0 0.5]
+MF3='P':'trimf',[0 0.5 1]
+MF4='BN':'trapmf',[-2.52 -0.987 -0.773 -0.54]
+MF5='BP':'trapmf',[0.394366197183099 0.846366197183098 1.2843661971831 3.4143661971831]
+
+[Rules]
+1 1, 2 (1) : 1
+1 2, 3 (1) : 1
+1 3, 5 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 3 (1) : 1
+3 1, 4 (1) : 1
+3 2, 1 (1) : 1
+3 3, 2 (1) : 1
