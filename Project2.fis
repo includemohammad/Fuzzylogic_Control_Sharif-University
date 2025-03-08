@@ -1,0 +1,47 @@
+[System]
+Name='Project2'
+Type='sugeno'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=9
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='input1'
+Range=[0 1]
+NumMFs=9
+MF1='mf1':'gaussmf',[0.05308 0]
+MF2='mf2':'gaussmf',[0.05308 0.125]
+MF3='mf3':'gaussmf',[0.05308 0.25]
+MF4='mf4':'gaussmf',[0.05308 0.375]
+MF5='mf5':'gaussmf',[0.05308 0.5]
+MF6='mf6':'gaussmf',[0.05308 0.625]
+MF7='mf7':'gaussmf',[0.05308 0.75]
+MF8='mf8':'gaussmf',[0.05308 0.875]
+MF9='mf9':'gaussmf',[0.05308 1]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=5
+MF1='mf1':'constant',[0]
+MF2='mf2':'constant',[0.1875]
+MF3='mf3':'constant',[0.1875]
+MF4='mf4':'constant',[0.625]
+MF5='mf5':'constant',[0.25]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1
+4, 4 (1) : 1
+5, 5 (1) : 1
+6, 4 (1) : 1
+7, 3 (1) : 1
+8, 2 (1) : 1
+9, 1 (1) : 1
